@@ -66,6 +66,7 @@ function TodoList ({ isLogin }) {
     // edit todo
     const EditTodo = (todo) => {
         setNewTodo(todo)
+        InputRef.current.value = todo.content
         setTodoStatus('edit')
     }
 
