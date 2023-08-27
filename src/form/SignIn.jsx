@@ -22,9 +22,9 @@ function SignIn ({ setIsLogin }) {
                 password: ''
             })
         } catch (error) {
-            if (res.response.status === 400) alert('欄位驗證失敗')
-            if (res.response.status === 401) alert('帳號密碼驗證錯誤')
-            if (res.response.status === 404) alert('用戶不存在')
+            if (error.response.status === 400) alert('欄位驗證失敗')
+            if (error.response.status === 401) alert('帳號密碼驗證錯誤')
+            if (error.response.status === 404) alert('用戶不存在')
         }
     }
     return (

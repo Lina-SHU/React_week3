@@ -16,7 +16,6 @@ function SignUp () {
         try {
             const res = await axios.post(`${import.meta.env.VITE_APIPATH}users/sign_up`, sigupData)
             if (res.status === 201) alert('註冊成功')
-            if (res.status === 400) alert('用戶已存在')
             setSignupData({
                 email: '',
                 password: '',
