@@ -10,7 +10,9 @@ function TodoList ({ isLogin }) {
             const res = await axios.get(`${import.meta.env.VITE_APIPATH}todos`)
             setTodolist(res.data.data)
         } catch (error) {
-            alert(error)
+            if (error.response.status === 400) alert('新增失敗')
+            if (error.response.status === 401) alert('未提供 token')
+            if (error.response.status === 403) alert('token 驗證失敗')
         }
     }
     
